@@ -41,6 +41,5 @@ public class IO_Template {
             }
             return str;
         }
-
     }
 }

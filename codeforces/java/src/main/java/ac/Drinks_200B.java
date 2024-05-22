@@ -1,12 +1,17 @@
+package ac;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class BalancedShuffle_1970A1 {
+public class Drinks_200B {
     public static void main(String[] args) {
         FastReader reader = new FastReader();
-
+        int n = reader.nextInt();
+        double res = 0;
+        for (int i = 0; i < n; i++) res += reader.nextDouble() / n;
+        System.out.printf("%.12f", res);
     }
 
     private static class FastReader {
@@ -27,6 +32,7 @@ public class BalancedShuffle_1970A1 {
         }
 
         int nextInt() {return Integer.parseInt(next());}
+        float nextFloat() {return Float.parseFloat(next());}
         double nextDouble() {return Double.parseDouble(next());}
         long nextLong() {return Long.parseLong(next());}
 
@@ -40,7 +46,5 @@ public class BalancedShuffle_1970A1 {
             }
             return str;
         }
-
     }
-
 }

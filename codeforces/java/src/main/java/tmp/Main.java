@@ -1,13 +1,17 @@
+package tmp;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class CoinGames_1972B {
-
+public class Main {
     public static void main(String[] args) {
-        FastReader reader = new FastReader();
-        
+        int n = 10;
+        int i = 0;
+        while (++i < n) {
+            System.out.println(i);
+        }
     }
 
     private static class FastReader {
@@ -41,7 +45,6 @@ public class CoinGames_1972B {
             }
             return str;
         }
-
     }
-
 }
+
