@@ -20,3 +20,8 @@ func isBalanced(root *tmp.TreeNode) bool {
 	}
 	return true
 }
+
+type name struct {
+	iuhefiquwehfiqwe string 
+	fiweuh string
+}
