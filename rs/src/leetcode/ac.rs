@@ -94,5 +94,8 @@ impl Solution {
 
         true
     }
-}
 
+    pub fn to_lower_case_709(s: String) -> String {
+        s.to_lowercase()
+    }
+}
