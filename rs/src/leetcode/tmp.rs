@@ -12,8 +12,5 @@ impl ListNode {
 
 struct Solution;
 
-impl Solution {
-    fn delete_duplicates(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
+impl Solution {}
 
-    }
-}
