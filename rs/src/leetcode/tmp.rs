@@ -99,4 +99,50 @@ impl Solution {
     pub fn is_alien_sorted_953(words: Vec<String>, order: String) -> bool {}
 
     pub fn common_chars_1002(words: Vec<String>) -> Vec<String> {}
+
+    pub fn remove_outer_parenthese_1021(s: String) -> String {}
+
+    pub fn remove_duplicates_1047(s: String) -> String {}
+
+    pub fn gcd_of_strings_1071(str1: String, str2: String) -> String {}
+
+    pub fn find_ocurrences_1078(text: String, first: String, second: String) -> Vec<String> {}
+
+    pub fn defang_ip_addr_1108(address: String) -> String {}
+
+    pub fn day_of_year_1154(date: String) -> i32 {}
+
+    pub fn count_characters_1160(words: Vec<String>, chars: String) -> i32 {}
+
+    pub fn max_number_of_balloons_1189(text: String) -> i32 {}
+
+    pub fn balanced_string_split_1221(s: String) -> i32 {}
+
+    pub fn freq_alphabets_1309(s: String) -> String {}
+
+    pub fn remove_palindrome_string_1332(s: String) -> i32 {}
+
+    pub fn days_between_dates(date1: String, date2: String) -> i32 {}
+
+    pub fn sort_string_1370(s: String) -> String {}
+
+    pub fn generate_the_string_1374(n: i32) -> String {}
+
+    pub fn string_matching_1408(words: Vec<String>) -> Vec<String> {}
+
+    pub fn reformat_1417(s: String) -> String {}
+
+    pub fn max_score_1422(s: String) -> i32 {}
+
+    pub fn dest_city_1436(paths: Vec<Vec<String>>) -> String {}
+
+    pub fn max_power_1446(s: String) -> i32 {}
+
+    pub fn is_prefix_of_word_1455(sentence: String, search_word: String) -> i32 {}
+
+    pub fn is_path_crossing_1496(path: String) -> bool {}
+
+    pub fn reformat_date_1507(date: String) -> String {}
+
+    pub fn restore_string_1528(s: String, indices: Vec<i32>) -> String {}
 }
