@@ -145,4 +145,53 @@ impl Solution {
     pub fn reformat_date_1507(date: String) -> String {}
 
     pub fn restore_string_1528(s: String, indices: Vec<i32>) -> String {}
+
+    pub fn make_good_1544(s: String) -> String {}
+
+    pub fn thousand_separator_1556(n: i32) -> String {}
+
+    pub fn modify_string_1576(s: String) -> String {}
+
+    pub fn reorder_spaces_1592(text: String) -> String {}
+
+    pub fn min_operations_1598(logs: Vec<String>) -> i32 {}
+
+    pub fn max_depth_1614(s: String) -> i32 {}
+
+    pub fn max_length_between_equal_characters_1624(s: String) -> i32 {}
+
+    pub fn slowest_key_1629(release_times: Vec<i32>, keys_pressed: String) -> char {}
+
+    pub fn array_strings_are_equal_1662(word1: Vec<String>, word2: Vec<String>) -> bool {}
+
+    pub fn interpret_1678(command: String) -> String {}
+
+    pub fn count_consistent_strings_1684(allowed: String, words: Vec<String>) -> i32 {}
+
+    pub fn reformat_number_1694(number: String) -> String {}
+
+    pub fn halves_are_alike_1704(s: String) -> bool {}
+
+    pub fn maximum_time_1736(time: String) -> String {}
+
+    pub fn min_operations_1758(s: String) -> i32 {}
+
+    pub fn longest_nice_substring_1763(s: String) -> String {}
+
+    pub fn merge_alternately_1768(word1: String, word2: String) -> String {}
+
+    pub fn count_matches_1773(item: Vec<Vec<String>>, rule_key: String, rule_value: String) -> i32 {
+    }
+
+    pub fn check_one_segment_1784(s: String) -> bool {}
+
+    pub fn are_almost_equal_1790(s1: String, s2: String) -> bool {}
+
+    pub fn second_highest_1796(s: String) -> i32 {}
+
+    pub fn num_different_integers_1805(word: String) -> i32 {}
+
+    pub fn square_is_white_1812(coordinates: String) -> bool {}
+
+    pub fn truncate_sentence_1816(s: String, k: i32) -> String {}
 }
