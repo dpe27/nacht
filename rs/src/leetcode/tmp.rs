@@ -1,3 +1,5 @@
+use std::{char, collections::HashMap};
+
 #[allow(dead_code)]
 struct ListNode {
     val: i32,
@@ -16,7 +18,12 @@ impl ListNode {
 struct Solution;
 
 impl Solution {
-    pub fn is_anagram_242(s: String, t: String) -> bool {}
+
+    pub fn is_anagram_242_2(s: String, t: String) -> bool {
+        let mut count: HashMap<char, usize> = HashMap::new();
+
+
+    }
 
     pub fn word_pattern_290(pattern: String, s: String) -> bool {}
 
@@ -62,7 +69,7 @@ impl Solution {
 
     pub fn count_binary_substrings_696(s: String) -> i32 {}
 
-    pub fn shortest_completing_word_748(license_plate: String, words: Vec<String>) -> String {}
+    pub `fn shortest_completing_word_748(license_plate: String, words: Vec<String>) -> String {}
 
     pub fn num_jewels_in_stones_771(jewels: String, stones: String) -> i32 {}
 

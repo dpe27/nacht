@@ -98,4 +98,17 @@ impl Solution {
     pub fn to_lower_case_709(s: String) -> String {
         s.to_lowercase()
     }
+
+    pub fn is_anagram_242_1(s: String, t: String) -> bool {
+        let mut s_chars: Vec<char> = s.chars().collect();
+        let mut t_chars: Vec<char> = t.chars().collect();
+
+        s_chars.sort();
+        t_chars.sort();
+
+        let s: String = s_chars.into_iter().collect();
+        let t: String = t_chars.into_iter().collect();
+
+        s == t
+    }
 }
