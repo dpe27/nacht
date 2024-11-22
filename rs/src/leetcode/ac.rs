@@ -111,4 +111,34 @@ impl Solution {
 
         s == t
     }
+
+    pub fn is_anagram_242_2(s: String, t: String) -> bool {
+        let mut count: std::collections::HashMap<char, i32> = std::collections::HashMap::new();
+        for c in s.chars() {
+            *count.entry(c).or_insert(0) += 1
+        }
+        for c in t.chars() {
+            *count.entry(c).or_insert(0) -= 1
+        }
+        count.values().all(|&val| val == 0)
+    }
+
+    pub fn is_anagram_242_3(s: String, t: String) -> bool {
+        let mut count: [i32; 26] = [0; 26];
+        // count the frequency of characters in string s
+        for c in s.chars() {
+            count[(c as u8 - b'a') as usize] += 1;
+        }
+        // decrement the frequency of characters in string t
+        for c in t.chars() {
+            count[(c as u8 - b'a') as usize] -= 1;
+        }
+        // check if any character has non-zero frequency
+        for val in count {
+            if val != 0 {
+                return false;
+            }
+        }
+        true
+    }
 }
