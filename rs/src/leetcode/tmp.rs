@@ -1,3 +1,5 @@
+use std::usize;
+
 #[allow(dead_code)]
 struct ListNode {
     val: i32,
@@ -17,32 +19,24 @@ struct Solution;
 
 #[allow(dead_code)]
 impl Solution {
-    pub fn word_pattern_290(pattern: String, s: String) -> bool {}
-
-    //pub fn reverse_string_344(s: &mut Vec<char>) {}
-    //
-    //pub fn reverse_vowels_345(s: String) -> String {}
-    //
-    //pub fn can_construct_383(ransom_note: String, magazine: String) -> bool {}
-    //
     //pub fn first_uniq_char_387(s: String) -> i32 {}
-    //
+
     //pub fn find_the_difference_389(s: String, t: String) -> char {}
-    //
+
     //pub fn longest_palindrome_409(s: String) -> i32 {}
-    //
+
     //pub fn fizz_buzz_412(n: i32) -> Vec<String> {}
-    //
+
     //pub fn add_strings_415(num1: String, num2: String) -> String {}
-    //
+
     //pub fn count_segments_434(s: String) -> i32 {}
-    //
+
     //pub fn repeated_substring_pattern_459(s: String) -> bool {}
-    //
+
     //pub fn license_key_formatting_482(s: String, k: i32) -> String {}
-    //
+
     //pub fn find_words_500(words: Vec<String>) -> Vec<String> {}
-    //
+
     //pub fn detect_capital_use_520(word: String) -> bool {}
     //
     //pub fn find_lu_slength_521(a: String, b: String) -> i32 {}
