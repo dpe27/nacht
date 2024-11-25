@@ -288,4 +288,40 @@ impl Solution {
             first_unique
         }
     }
+
+    pub fn find_the_difference_389_1(s: String, t: String) -> char {
+        let mut s_chars: Vec<char> = s.chars().collect();
+        let mut t_chars: Vec<char> = t.chars().collect();
+
+        s_chars.sort();
+        t_chars.sort();
+
+        for i in 0..s_chars.len() {
+            if s_chars[i] != t_chars[i] {
+                return t_chars[i];
+            }
+        }
+
+        t_chars[t_chars.len() - 1]
+    }
+
+    pub fn find_the_difference_389_2(s: String, t: String) -> char {
+        let mut freqs: std::collections::HashMap<char, i32> = std::collections::HashMap::new();
+
+        for c in s.chars() {
+            freqs.entry(c).and_modify(|count| *count += 1).or_insert(1);
+        }
+
+        let mut added_char = ' ';
+        for c in t.chars() {
+            match freqs.get(&c) {
+                None | Some(0) => added_char = c,
+                Some(&f) => {
+                    freqs.insert(c, f - 1);
+                }
+            }
+        }
+
+        added_char
+    }
 }

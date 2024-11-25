@@ -19,57 +19,15 @@ struct Solution;
 
 #[allow(dead_code)]
 impl Solution {
-    pub fn first_uniq_char_387_1(s: String) -> i32 {
-        let n = s.len();
-        let chars: Vec<char> = s.chars().collect();
-        if n == 1 {
-            return 0;
+    pub fn longest_palindrome_409(s: String) -> i32 {
+        let mut count: std::collections::HashMap<char, i16> = std::collections::HashMap::new();
+
+        for c in char {
+            count.entry(c).and_modify(|freq| *freq += 1).or_insert(1);
         }
 
-        for i in 0..n {
-            for j in 0..n {
-                if i == n - 1 && j == n - 1 {
-                    return i as i32;
-                }
-
-                if i == j {
-                    continue;
-                }
-
-                if chars[i] == chars[j] {
-                    break;
-                }
-
-                if j == n - 1 {
-                    return i as i32;
-                }
-            }
-        }
-
-        -1
+        let res: i32 = 0;
     }
-
-    pub fn first_uniq_char_387_2(s: String) -> i32 {
-        let mut first_unique = i32::MAX;
-
-        for c in 'a'..='z' {
-            if s.contains(c) {
-                if s.find(c) == s.rfind(c) {
-                    first_unique = first_unique.min(s.find(c).unwrap() as i32);
-                }
-            }
-        }
-
-        if first_unique == i32::MAX {
-            -1
-        } else {
-            first_unique
-        }
-    }
-
-    //pub fn find_the_difference_389(s: String, t: String) -> char {}
-
-    //pub fn longest_palindrome_409(s: String) -> i32 {}
 
     //pub fn fizz_buzz_412(n: i32) -> Vec<String> {}
 
