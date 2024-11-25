@@ -324,4 +324,43 @@ impl Solution {
 
         added_char
     }
+
+    pub fn longest_palindrome_409(s: String) -> i32 {
+        let mut count: std::collections::HashMap<char, i16> = std::collections::HashMap::new();
+
+        for c in s.chars() {
+            count.entry(c).and_modify(|freq| *freq += 1).or_insert(1);
+        }
+
+        let mut res: i32 = 0;
+        let mut flag = false;
+        for v in count.values() {
+            if *v % 2 == 1 {
+                res += (*v - 1) as i32;
+                flag = true;
+                continue;
+            }
+
+            res += *v as i32;
+        }
+
+        if flag {
+            return res + 1;
+        }
+
+        res
+    }
+
+    pub fn fizz_buzz_412(n: i32) -> Vec<String> {
+        let mut res: Vec<String> = vec![];
+        for i in 1..=n {
+            match i {
+                _ if i % 3 == 0 && i % 5 == 0 => res.push(String::from("FizzBuzz")),
+                _ if i % 3 == 0 => res.push(String::from("Fizz")),
+                _ if i % 5 == 0 => res.push(String::from("Buzz")),
+                _ => res.push(i.to_string()),
+            }
+        }
+        res
+    }
 }

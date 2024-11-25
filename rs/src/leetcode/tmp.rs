@@ -1,4 +1,4 @@
-use std::char;
+use std::i32;
 
 #[allow(dead_code)]
 struct ListNode {
@@ -19,17 +19,7 @@ struct Solution;
 
 #[allow(dead_code)]
 impl Solution {
-    pub fn longest_palindrome_409(s: String) -> i32 {
-        let mut count: std::collections::HashMap<char, i16> = std::collections::HashMap::new();
-
-        for c in char {
-            count.entry(c).and_modify(|freq| *freq += 1).or_insert(1);
-        }
-
-        let res: i32 = 0;
-    }
-
-    //pub fn fizz_buzz_412(n: i32) -> Vec<String> {}
+    //pub fn add_binary_67(a: String, b: String) -> String {}
 
     //pub fn add_strings_415(num1: String, num2: String) -> String {}
 
