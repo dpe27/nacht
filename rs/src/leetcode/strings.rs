@@ -363,4 +363,55 @@ impl Solution {
         }
         res
     }
+
+    pub fn add_strings_415(num1: String, num2: String) -> String {
+        let mut m = num1.len();
+        let mut n = num2.len();
+
+        let num1_chars: Vec<char> = num1.chars().collect();
+        let num2_chars: Vec<char> = num2.chars().collect();
+
+        let mut rem = false;
+        let mut res: Vec<char> = vec![];
+
+        while m > 0 || n > 0 {
+            let mut digit: u8;
+
+            match (m, n) {
+                (_, _) if m > 0 && n > 0 => {
+                    m -= 1;
+                    n -= 1;
+                    digit = (num1_chars[m] as u8 - '0' as u8) + (num2_chars[n] as u8 - '0' as u8);
+                }
+                (_, _) if m > 0 => {
+                    m -= 1;
+                    digit = num1_chars[m] as u8 - '0' as u8;
+                }
+                (_, _) if n > 0 => {
+                    n -= 1;
+                    digit = num2_chars[n] as u8 - '0' as u8;
+                }
+                (_, _) => break,
+            }
+
+            if rem {
+                digit += 1
+            }
+
+            rem = digit >= 10;
+
+            res.push(((digit % 10) as u8 + b'0') as char);
+        }
+
+        if rem {
+            res.push('1');
+        }
+
+        res.reverse();
+        res.into_iter().collect()
+    }
+
+    pub fn count_segments_434(s: String) -> i32 {
+        s.split_whitespace().count() as i32
+    }
 }

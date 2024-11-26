@@ -1,5 +1,3 @@
-use std::i32;
-
 #[allow(dead_code)]
 struct ListNode {
     val: i32,
@@ -15,17 +13,29 @@ impl ListNode {
 }
 
 #[allow(dead_code)]
-struct Solution;
+pub struct Solution;
 
 #[allow(dead_code)]
 impl Solution {
     //pub fn add_binary_67(a: String, b: String) -> String {}
 
-    //pub fn add_strings_415(num1: String, num2: String) -> String {}
+    pub fn repeated_substring_pattern_459(s: String) -> bool {
+        let mut count = [0; 26];
+        for c in s.chars() {
+            count[(c as u8 - b'a') as usize] += 1;
+        }
 
-    //pub fn count_segments_434(s: String) -> i32 {}
+        count.sort();
+        let min_freq = count[0];
 
-    //pub fn repeated_substring_pattern_459(s: String) -> bool {}
+        for i in 1..26 {
+            if count[i] % min_freq != 0 {
+                return false;
+            }
+        }
+
+        true
+    }
 
     //pub fn license_key_formatting_482(s: String, k: i32) -> String {}
 

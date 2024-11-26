@@ -6,7 +6,6 @@ use codeforces::*;
 #[allow(unused_imports)]
 use leetcode::*;
 
-
 fn main() {
     println!("Hello, world!");
 }
