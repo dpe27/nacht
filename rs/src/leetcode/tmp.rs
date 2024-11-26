@@ -19,28 +19,6 @@ pub struct Solution;
 impl Solution {
     //pub fn add_binary_67(a: String, b: String) -> String {}
 
-    pub fn repeated_substring_pattern_459(s: String) -> bool {
-        let mut count = [0; 26];
-        for c in s.chars() {
-            count[(c as u8 - b'a') as usize] += 1;
-        }
-
-        count.sort();
-        let min_freq = count[0];
-
-        for i in 1..26 {
-            if count[i] % min_freq != 0 {
-                return false;
-            }
-        }
-
-        true
-    }
-
-    //pub fn license_key_formatting_482(s: String, k: i32) -> String {}
-
-    //pub fn find_words_500(words: Vec<String>) -> Vec<String> {}
-
     //pub fn detect_capital_use_520(word: String) -> bool {}
 
     //pub fn find_lu_slength_521(a: String, b: String) -> i32 {}

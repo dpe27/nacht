@@ -414,4 +414,62 @@ impl Solution {
     pub fn count_segments_434(s: String) -> i32 {
         s.split_whitespace().count() as i32
     }
+
+    pub fn repeated_substring_pattern_459_1(s: String) -> bool {
+        let n = s.len();
+        for i in 1..=n / 2 {
+            if n % i == 0 {
+                let substr = &s[0..i];
+                let repeated = substr.repeat(n / i);
+                if repeated == s {
+                    return true;
+                }
+            }
+        }
+
+        false
+    }
+
+    pub fn repeated_substring_pattern_459_2(s: String) -> bool {
+        let doubled = s.clone() + &s;
+        let sub = &doubled[1..doubled.len() - 1];
+        sub.contains(&s)
+    }
+
+    pub fn license_key_formatting_482(s: String, k: i32) -> String {
+        let mut res: Vec<char> = vec![];
+        let mut i = 0;
+        for c in s.chars().rev() {
+            if c == '-' {
+                continue;
+            }
+
+            if i == k {
+                i = 0;
+                res.push('-');
+            }
+
+            res.push(c.to_ascii_uppercase());
+            i += 1;
+        }
+
+        res.reverse();
+        res.into_iter().collect()
+    }
+
+    pub fn find_words_500(words: Vec<String>) -> Vec<String> {
+        let rows: [std::collections::HashSet<char>; 3] = [
+            "qwertyuiop".chars().collect(),
+            "asdfghjkl".chars().collect(),
+            "zxcvbnm".chars().collect(),
+        ];
+
+        words
+            .into_iter()
+            .filter(|w| {
+                let chars: std::collections::HashSet<char> = w.to_lowercase().chars().collect();
+                rows.iter().any(|row| chars.is_subset(row))
+            })
+            .collect()
+    }
 }
