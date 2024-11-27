@@ -1,4 +1,4 @@
-struct ListNode {
+pub struct ListNode {
     val: i32,
     next: Option<Box<ListNode>>,
 }
@@ -12,7 +12,7 @@ impl ListNode {
 }
 
 #[allow(dead_code)]
-struct Solution;
+pub struct Solution;
 
 #[allow(dead_code)]
 impl Solution {

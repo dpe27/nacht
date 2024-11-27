@@ -559,4 +559,98 @@ impl Solution {
         bytes[prev_end..n].reverse();
         unsafe { String::from_utf8_unchecked(bytes) }
     }
+
+    pub fn find_restaurant_599_1(list1: Vec<String>, list2: Vec<String>) -> Vec<String> {
+        let m = list1.len();
+        let n = list2.len();
+
+        let mut least_index_sum = usize::MAX;
+        let mut res: Vec<String> = vec![];
+
+        for i in 0..m {
+            for j in 0..n {
+                if list1[i] == list2[j] {
+                    if i + j < least_index_sum {
+                        res.clear();
+                        least_index_sum = i + j;
+                        res.push(list1[i].clone());
+                        continue;
+                    }
+
+                    if i + j == least_index_sum {
+                        res.push(list1[i].clone());
+                    }
+                }
+            }
+        }
+
+        res
+    }
+
+    pub fn find_restaurant_599_2(list1: Vec<String>, list2: Vec<String>) -> Vec<String> {
+        let map2: std::collections::HashMap<String, usize> = list2
+            .iter()
+            .enumerate()
+            .map(|(idx, str)| (str.to_string(), idx))
+            .collect();
+
+        let mut least_index_sum = usize::MAX;
+        let mut res: Vec<String> = vec![];
+
+        for (i, str) in list1.iter().enumerate() {
+            if let Some(j) = map2.get(str) {
+                if i + j < least_index_sum {
+                    res.clear();
+                    least_index_sum = i + j;
+                    res.push(str.to_string());
+                    continue;
+                }
+
+                if i + j == least_index_sum {
+                    res.push(str.to_string());
+                }
+            }
+        }
+
+        res
+    }
+
+    pub fn judge_circle_657_1(moves: String) -> bool {
+        // bad code
+        let mut moves_map: std::collections::HashMap<char, u16> = std::collections::HashMap::new();
+        for c in moves.chars() {
+            *moves_map.entry(c).or_insert(1) += 1;
+        }
+
+        match (
+            moves_map.get(&'R'),
+            moves_map.get(&'L'),
+            moves_map.get(&'U'),
+            moves_map.get(&'D'),
+        ) {
+            (Some(r), Some(l), _, _) if r != l => false,
+            (Some(_), None, _, _) => false,
+            (None, Some(_), _, _) => false,
+            (_, _, Some(u), Some(d)) if u != d => false,
+            (_, _, Some(_), None) => false,
+            (_, _, None, Some(_)) => false,
+            (_, _, _, _) => true,
+        }
+    }
+
+    pub fn judge_circle_657_2(moves: String) -> bool {
+        let mut state = (0i32, 0i32);
+        for c in moves.chars() {
+            match c {
+                'R' => state.0 += 1,
+                'L' => state.0 -= 1,
+                'U' => state.1 += 1,
+                'D' => state.1 -= 1,
+                _ => {
+                    continue;
+                }
+            }
+        }
+        state == (0i32, 0i32)
+    }
 }

@@ -1,38 +1,9 @@
 #[allow(dead_code)]
-struct ListNode {
-    val: i32,
-    next: Option<Box<ListNode>>,
-}
-
-#[allow(dead_code)]
-impl ListNode {
-    #[inline]
-    fn new(val: i32) -> Self {
-        ListNode { next: None, val }
-    }
-}
-
-#[allow(dead_code)]
 pub struct Solution;
 
 #[allow(dead_code)]
 impl Solution {
     //pub fn add_binary_67(a: String, b: String) -> String {}
-
-    pub fn find_restaurant_599(list1: Vec<String>, list2: Vec<String>) -> Vec<String> {
-        let m = list1.len();
-        let n = list2.len();
-
-        let mut least_index_sum = i32::MAX;
-
-        for i in 0..m {
-            for j in 0..n {
-                if 
-            }
-        }
-    }
-
-    //pub fn judge_circle_657(moves: String) -> bool {}
 
     //pub fn valid_palindrome_680(s: String) -> bool {}
 

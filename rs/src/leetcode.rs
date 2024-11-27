@@ -1,4 +1,14 @@
+pub mod array;
+pub mod array_tmp;
+pub mod backtracking;
+pub mod backtracking_tmp;
+pub mod bit_mani_tmp;
+pub mod bit_manipulation;
+pub mod dynamic_prog;
+pub mod dynamic_prog_tmp;
 pub mod linked_list;
+pub mod linked_list_tmp;
 pub mod strings;
-pub mod tmp;
-pub mod wa;
+pub mod strings_tmp;
+pub mod tree;
+pub mod tree_tmp;
