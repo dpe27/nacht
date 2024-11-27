@@ -1,5 +1,5 @@
 #[allow(dead_code)]
-struct Solution;
+pub struct Solution;
 
 #[allow(dead_code)]
 impl Solution {
@@ -471,5 +471,92 @@ impl Solution {
                 rows.iter().any(|row| chars.is_subset(row))
             })
             .collect()
+    }
+
+    pub fn detect_capital_use_520(word: String) -> bool {
+        let n = word.len();
+        let chars: Vec<char> = word.chars().collect();
+        let first_char_is_uppercase = chars[0].is_ascii_uppercase();
+
+        let mut uppercase_count = 0;
+        if first_char_is_uppercase {
+            uppercase_count += 1;
+        }
+
+        for i in 1..n {
+            if chars[i].is_ascii_uppercase() {
+                uppercase_count += 1;
+            }
+        }
+
+        uppercase_count == 0
+            || (uppercase_count == 1 && first_char_is_uppercase)
+            || (uppercase_count == n)
+    }
+
+    pub fn find_lus_length_521(a: String, b: String) -> i32 {
+        if a == b {
+            return -1;
+        }
+
+        std::cmp::max(a.len(), b.len()) as i32
+    }
+
+    pub fn reverse_str_541(s: String, k: i32) -> String {
+        let k: usize = k as usize;
+
+        s.chars()
+            .collect::<Vec<char>>()
+            .chunks(2 * k)
+            .map(|chunk| {
+                let substr_len = chunk.len();
+                if k >= substr_len {
+                    return chunk.iter().rev().collect::<String>();
+                }
+
+                chunk[..k].iter().rev().collect::<String>() + &chunk[k..].iter().collect::<String>()
+            })
+            .collect::<String>()
+    }
+
+    pub fn check_record_551(s: String) -> bool {
+        let mut absent_count = 0;
+
+        if s.contains("LLL") {
+            return false;
+        }
+
+        for c in s.chars() {
+            if c == 'A' {
+                absent_count += 1;
+                if absent_count >= 2 {
+                    return false;
+                }
+            }
+        }
+
+        true
+    }
+
+    pub fn reverse_words_557_1(s: String) -> String {
+        s.split_whitespace()
+            .map(|word| word.chars().rev().collect::<String>())
+            .collect::<Vec<String>>()
+            .join(" ")
+    }
+
+    pub fn reverse_words_557_2(s: String) -> String {
+        let mut bytes = s.into_bytes();
+        let n = bytes.len();
+
+        let mut prev_end = 0;
+        for i in 0..n {
+            if bytes[i] == b' ' {
+                bytes[prev_end..i].reverse();
+                prev_end = i + 1;
+            }
+        }
+        bytes[prev_end..n].reverse();
+        unsafe { String::from_utf8_unchecked(bytes) }
     }
 }

@@ -19,17 +19,18 @@ pub struct Solution;
 impl Solution {
     //pub fn add_binary_67(a: String, b: String) -> String {}
 
-    //pub fn detect_capital_use_520(word: String) -> bool {}
+    pub fn find_restaurant_599(list1: Vec<String>, list2: Vec<String>) -> Vec<String> {
+        let m = list1.len();
+        let n = list2.len();
 
-    //pub fn find_lu_slength_521(a: String, b: String) -> i32 {}
+        let mut least_index_sum = i32::MAX;
 
-    //pub fn reverse_str_541(s: String, k: i32) -> String {}
-
-    //pub fn check_record_551(s: String) -> bool {}
-
-    //pub fn reverse_words_557(s: String) -> String {}
-
-    //pub fn find_restaurant_599(list1: Vec<String>, list2: Vec<String>) -> Vec<String> {}
+        for i in 0..m {
+            for j in 0..n {
+                if 
+            }
+        }
+    }
 
     //pub fn judge_circle_657(moves: String) -> bool {}
 
