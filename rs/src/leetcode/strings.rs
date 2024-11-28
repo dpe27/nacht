@@ -242,6 +242,7 @@ impl Solution {
     }
 
     pub fn first_uniq_char_387_1(s: String) -> i32 {
+        // bad code
         let n = s.len();
         let chars: Vec<char> = s.chars().collect();
         if n == 1 {
@@ -561,6 +562,7 @@ impl Solution {
     }
 
     pub fn find_restaurant_599_1(list1: Vec<String>, list2: Vec<String>) -> Vec<String> {
+        // bad code
         let m = list1.len();
         let n = list2.len();
 
