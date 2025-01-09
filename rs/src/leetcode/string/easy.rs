@@ -3785,4 +3785,117 @@ impl Solution {
             _ => res - 1,
         })
     }
+
+    pub fn count_k_constraint_substrings_3258(s: String, k: i32) -> i32 {
+        let mut prev = 0;
+        let mut cnt_one = 0;
+        let mut res = 0;
+
+        for i in 1..s.len() {
+            if s.as_bytes()[i] == b'1' {
+                cnt_one += 1;
+            }
+            while cnt_one > k as usize && i - prev + 1 - cnt_one > k as usize {
+                if s.as_bytes()[prev] == b'1' {
+                    cnt_one -= 1;
+                }
+                prev += 1;
+            }
+            res += i - prev + 1
+        }
+
+        res as i32
+    }
+
+    pub fn check_two_chessboards_3274(coordinate1: String, coordinate2: String) -> bool {
+        (coordinate1.as_bytes()[0]
+            + coordinate1.as_bytes()[1]
+            + coordinate2.as_bytes()[0]
+            + coordinate2.as_bytes()[1])
+            % 2
+            == 0
+    }
+
+    pub fn convert_date_to_binary_3280(date: String) -> String {
+        fn parse_bin(mut s: String) -> String {
+            let mut bin: Vec<u8> = vec![];
+
+            while s.len() != 0 {
+                let mut rem = 0;
+                let mut tmp = String::new();
+                for i in 0..s.len() {
+                    let k = rem * 10 + s.as_bytes()[i] - b'0';
+                    tmp.push((k / 2 + b'0') as char);
+                    rem = k % 2;
+                }
+                bin.push(rem + b'0');
+                s = tmp.trim_start_matches('0').to_string();
+            }
+
+            bin.reverse();
+            unsafe { String::from_utf8_unchecked(bin) }
+        }
+
+        format!(
+            "{}-{}-{}",
+            parse_bin(date[..4].to_string()),
+            parse_bin(date[5..7].to_string()),
+            parse_bin(date[8..].to_string())
+        )
+    }
+
+    pub fn possible_string_count_3330_1(word: String) -> i32 {
+        let mut res = 0;
+        let mut cnt = 0;
+        let mut prev = word.as_bytes()[0];
+
+        for i in 0..word.len() {
+            if word.as_bytes()[i] != prev {
+                res += cnt - 1;
+                cnt = 0;
+                prev = word.as_bytes()[i];
+            }
+            cnt += 1;
+        }
+        res + cnt
+    }
+
+    pub fn possible_string_count_3330_2(word: String) -> i32 {
+        word.into_bytes()
+            .windows(2)
+            .map(|w| (w[0] == w[1]) as i32)
+            .sum::<i32>()
+            + 1
+    }
+
+    pub fn is_balanced_3340(num: String) -> bool {
+        let mut s1 = 0;
+        let mut s2 = 0;
+        (0..num.len()).for_each(|i| {
+            let c = num.as_bytes()[i] - b'0';
+            if i % 2 == 0 {
+                s1 += c;
+            } else {
+                s2 += c;
+            }
+        });
+        s1 == s2
+    }
+
+    pub fn has_match_3407(s: String, p: String) -> bool {
+        if s.len() < p.len() - 1 {
+            return false;
+        }
+        let k = p.find('*').unwrap();
+
+        if k == 0 {
+            s.rfind(&p[k + 1..]).is_some()
+        } else if k == p.len() - 1 {
+            s.find(&p[..k]).is_some()
+        } else {
+            let i = s.find(&p[..k]);
+            let j = s.rfind(&p[k + 1..]);
+            i.is_some() && j.is_some() && i.unwrap() + k - 1 != j.unwrap()
+        }
+    }
 }
