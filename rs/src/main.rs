@@ -1,5 +1,4 @@
-mod codeforces;
-mod leetcode;
+mod lc;
 
 fn main() {
     println!("Hello, World!");

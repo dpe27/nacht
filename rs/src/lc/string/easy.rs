@@ -3887,7 +3887,6 @@ impl Solution {
             return false;
         }
         let k = p.find('*').unwrap();
-
         if k == 0 {
             s.rfind(&p[k + 1..]).is_some()
         } else if k == p.len() - 1 {
