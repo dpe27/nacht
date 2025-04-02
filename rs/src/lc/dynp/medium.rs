@@ -11,7 +11,19 @@ impl Solution {
         0
     }
 
+    pub fn can_i_win_464(_max_choosable_integer: i32, _desired_total: i32) -> bool {
+        true
+    }
+
+    pub fn makesquare_473(_matchsticks: Vec<i32>) -> bool {
+        true
+    }
+
     pub fn find_target_sum_ways_494(_nums: Vec<i32>, _target: i32) -> i32 {
+        0
+    }
+
+    pub fn shopping_offers_638(_price: Vec<i32>, _special: Vec<Vec<i32>>, _needs: Vec<i32>) -> i32 {
         0
     }
 

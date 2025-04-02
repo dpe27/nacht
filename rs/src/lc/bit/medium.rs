@@ -298,6 +298,39 @@ impl Solution {
         count == 0
     }
 
+    pub fn find_maximum_xor_421(_nums: Vec<i32>) -> i32 {
+        0
+    }
+
+    pub fn total_hamming_distance_477_1(nums: Vec<i32>) -> i32 {
+        (0..nums.len() - 1).fold(0, |acc_i, i| {
+            acc_i + (i + 1..nums.len()).fold(0, |acc_j, j| acc_j + (nums[i] ^ nums[j]).count_ones())
+        }) as i32
+    }
+
+    pub fn total_hamming_distance_477_2(nums: Vec<i32>) -> i32 {
+        (0..32).fold(0, |res, i| {
+            let count_ones = nums.iter().filter(|n| *n & (1 << i) != 0).count();
+            res + count_ones * (nums.len() - count_ones)
+        }) as i32
+    }
+
+    pub fn flip_lights_672(n: i32, presses: i32) -> i32 {
+        if presses == 0 {
+            1
+        } else if n == 1 {
+            2
+        } else if n == 2 && presses == 1 {
+            3
+        } else if n == 2 || presses == 1 {
+            4
+        } else if presses == 2 {
+            7
+        } else {
+            8
+        }
+    }
+
     pub fn circular_permutation_1238(n: i32, start: i32) -> Vec<i32> {
         (0..1 << n).fold(vec![], |mut res, k| {
             res.push(start ^ k ^ (k >> 1));
